@@ -266,7 +266,63 @@
         form.reset();
         sendBtn.disabled = false;
       });
-    })();
+    })();<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function() {
+
+    // Initialize EmailJS with your PUBLIC KEY
+    emailjs.init("ldEcbD5dRTRAVbncp");
+
+    const form = document.getElementById('contactForm');
+    const sending = document.getElementById('sending');
+    const success = document.getElementById('success');
+    const sendBtn = document.getElementById('sendBtn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      sendBtn.disabled = true;
+      sending.classList.remove('hidden');
+      success.classList.add('hidden');
+
+      // EmailJS SEND FUNCTION
+      emailjs.send(
+        "service_flikom9",
+        "template_otznp01",
+        {
+          name: name,
+          email: email,
+          message: message
+        }
+      )
+      .then(() => {
+        sending.classList.add('hidden');
+        success.classList.remove('hidden');
+        form.reset();
+        sendBtn.disabled = false;
+      })
+      .catch((err) => {
+        sending.classList.add('hidden');
+        sendBtn.disabled = false;
+        alert("❌ Failed to send message.\n\n" + JSON.stringify(err));
+      });
+
+    });
+
+  })();
+</script>
   </script>
 </body>
 </html>
+
