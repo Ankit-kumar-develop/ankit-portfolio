@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ankit Kumar — Portfolio</title>
+  <meta name="description" content="Ankit Kumar — Computer Science student. Projects, skills, photography and contact." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>Ankit Kumar</h1>
+      <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Hi — I'm Ankit</h2>
+        <p>Computer Science student. I build web projects, take photos and learn finance.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/ankitkrexperts/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/in/ankit-kumar-971163399/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://x.com/AnkitkrExperts" target="_blank" rel="noopener">X (Twitter)</a>
+        </div>
+      </div>
+      <div class="hero-image" aria-hidden="true">
+        <!-- If you have an image, replace below src -->
+        <img src="hero.jpg" alt="Ankit working / photography" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <section id="projects" class="cards">
+      <article class="card">
+        <h3>Project 1</h3>
+        <p>Short description.</p>
+      </article>
+      <article class="card">
+        <h3>Project 2</h3>
+        <p>Short description.</p>
+      </article>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact me</h2>
+      <form id="contactForm" autocomplete="off">
+        <label>
+          Name
+          <input type="text" name="name" id="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" id="email" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" id="message" rows="5" required></textarea>
+        </label>
+        <div class="form-row">
+          <button type="submit" id="sendBtn">Send message</button>
+          <div id="sending" class="hidden">Sending…</div>
+        </div>
+        <div id="success" class="hidden" role="status">Message sent — thank you!</div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Ankit Kumar</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
