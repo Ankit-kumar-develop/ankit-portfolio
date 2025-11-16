@@ -65,12 +65,53 @@ button{padding:.6rem 1rem;border-radius:8px;border:0;background:var(--accent);co
 
 .site-footer{padding:1rem;text-align:center;color:var(--muted)}
 
-/* Dark mode */
-body.dark{
-  --bg:#0b1020;
-  --card:#0f1724;
-  --text:#e6eef8;
-  --muted:#9fb0d1;
-  --accent:#4f7bff;
-  background: linear-gradient(180deg, rgba(8,10,18,0.7), rgba(12,14,20,0.7)), url('background-dark.jpg') center/cover fixed no-repeat;
+/* --- FORM STYLING FOR DARK MODE --- */
+body.dark input,
+body.dark textarea,
+body.dark select,
+body.dark button,
+body.dark .col input,
+body.dark .col textarea {
+  color: var(--text);                     /* text inside inputs */
+  background: rgba(255,255,255,0.03);     /* subtle dark input bg */
+  border: 1px solid rgba(255,255,255,0.12);
 }
+
+/* placeholder color */
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+  color: rgba(230,238,248,0.45);         /* softer placeholder */
+}
+
+/* caret color */
+body.dark input,
+body.dark textarea {
+  caret-color: var(--accent);
+}
+
+/* browser autofill (Chrome) */
+body.dark input:-webkit-autofill,
+body.dark textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--text) !important;
+  box-shadow: 0 0 0px 1000px rgba(255,255,255,0.03) inset !important;
+}
+
+/* improve contrast for validation tooltip focus outlines (optional) */
+body.dark input:focus,
+body.dark textarea:focus {
+  outline: 2px solid rgba(79,123,255,0.18);
+  outline-offset: 2px;
+}
+
+/* buttons keep readable text */
+body.dark button {
+  color: #fff;
+}
+
+/* optional: labels & helper text */
+body.dark label,
+body.dark .muted {
+  color: var(--muted);
+}
+
+
