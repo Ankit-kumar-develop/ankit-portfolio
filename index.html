@@ -4,21 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ankit Kumar — Portfolio</title>
-  <meta name="description" content="Ankit Kumar — Computer Science student. Projects, skills, photography and contact." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root{
       --accent:#4f7bff;
       --bg-light:#f2f4f8;
-      --card:#ffffff;
+      --card:#fff;
       --text:#0f1724;
       --muted:#52637a;
-      --link-light: #000000;       /* links in light mode */
-      --link-light-hover: #333333;
-      --link-dark: #ff4d4d;        /* links in dark mode */
-      --link-dark-hover: #ff8080;
-      --input-bg-light: rgba(255,255,255,0.95);
+      --input-bg-light: rgba(255,255,255,0.9);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -32,139 +26,123 @@
       transition: background-color .25s,color .25s;
       line-height:1.45;
     }
-
-    /* layout container */
     .wrap{max-width:1100px;margin:0 auto;padding:1rem}
-
-    /* header */
     header.site-header{display:flex;justify-content:space-between;align-items:center;padding:0.75rem 0;gap:1rem}
     .brand h1{margin:0;font-size:1.4rem}
     nav.nav a{margin-left:1rem;text-decoration:none;color:var(--muted)}
     #themeToggle{border:0;background:transparent;font-size:1.05rem;cursor:pointer;padding:.25rem .5rem;border-radius:6px}
 
-    /* hero */
     .hero{display:flex;flex-wrap:wrap;gap:2rem;align-items:center;padding:1.25rem 0}
     .hero-content{flex:1;min-width:260px}
-    .hero-content h2{font-size:2rem;margin:0 0 .5rem;font-weight:700}
-    .hero-content p{font-size:1.05rem;color:var(--muted);margin:0 0 1rem}
     .hero-image{flex-basis:320px}
-    .hero-image img{width:100%;border-radius:12px;display:block;box-shadow:0 10px 40px rgba(10,18,40,0.08)}
+    .hero-image img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 30px rgba(10,18,40,0.08)}
 
-    /* socials */
     .socials{margin-top:0.75rem}
-    .socials a{
-      display:inline-block;margin-right:.6rem;padding:.4rem .65rem;border-radius:8px;text-decoration:none;background:rgba(0,0,0,0.04);box-shadow:0 4px 12px rgba(12,18,30,0.04);color:var(--text);transition:transform .15s ease, background .15s ease;
-    }
-    .socials a:hover{ background:rgba(0,0,0,0.08); transform:translateY(-3px); }
+    .socials a{display:inline-block;margin-right:.6rem;padding:.4rem .65rem;border-radius:8px;text-decoration:none;background:rgba(255,255,255,0.8);box-shadow:0 4px 12px rgba(12,18,30,0.04);color:var(--text)}
 
-    /* cards + projects */
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:1rem 0}
-    .card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 8px 22px rgba(19,24,29,0.06);margin-bottom:1.25rem;transition:transform .12s ease}
-    .card:hover{ transform: translateY(-4px); }
+    .card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 6px 18px rgba(19,24,29,0.04)}
 
-    /* contact */
     .contact{padding:1rem 0}
     label{display:block;margin-bottom:.5rem;font-weight:600}
     .form-row{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
-    input,textarea,select{padding:.6rem;border-radius:8px;border:1px solid #d7e6f6;background:var(--input-bg-light);width:100%;min-width:0;color:var(--text)}
+    input,textarea,select{padding:.55rem;border-radius:8px;border:1px solid #d7e6f6;background:var(--input-bg-light);width:100%;min-width:0;color:var(--text)}
     .col{flex:1;min-width:140px}
     button{padding:.6rem 1rem;border-radius:8px;border:0;background:var(--accent);color:white;cursor:pointer}
 
     .muted{color:var(--muted)}
     .hidden{display:none}
-    footer{padding:1rem 0;color:var(--muted);font-size:.95rem;border-top:1px solid rgba(0,0,0,0.06);margin-top:2rem}
+    footer{padding:1rem 0;color:var(--muted);font-size:.95rem}
 
-    /* MARKSHEET LINK BUTTON */
-    .achievement-link {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 8px;
-      background: rgba(0,0,0,0.04);
-      color: var(--link-light);
-      text-decoration:none;
-      font-weight:600;
-      transition: background .12s ease, transform .12s ease;
-    }
-    .achievement-link:hover { transform: translateY(-3px); background: rgba(0,0,0,0.08); }
-
-    /* Light mode links (default) */
-    a, a:visited { color: var(--link-light) !important; text-decoration: none; }
-    a:hover { color: var(--link-light-hover) !important; text-decoration: underline; }
-
-    /* Dark theme */
+    /* DARK THEME */
     body.dark{
       --bg-light:#07101a;
       --card:#0f1724;
       --text:#e6eef8;
       --muted:#94a9d0;
+      --accent:#4f7bff;
       background: linear-gradient(180deg,#05060a,#081226);
       color:var(--text);
     }
-    body.dark .socials a{ background: rgba(255,255,255,0.03); color:var(--text); }
-    body.dark .card{ background: var(--card); box-shadow: 0 10px 40px rgba(2,6,18,0.6); }
+    body.dark .socials a{background:rgba(255,255,255,0.03)}
+    body.dark .card{background:var(--card);box-shadow:0 8px 30px rgba(2,6,18,0.6)}
 
-    /* Dark mode inputs — strong rules (autofill, caret, placeholder) */
-    /* --- FORM STYLING FOR DARK MODE --- */
+    /* ===========================
+       STRONG DARK MODE INPUT RULES
+       (high specificity + !important)
+       =========================== */
+
+    /* Force input/textarea text color in dark mode */
     body.dark input,
     body.dark textarea,
     body.dark select,
-    body.dark button,
-    body.dark .col input,
-    body.dark .col textarea {
+    body.dark input[type="text"],
+    body.dark input[type="email"],
+    body.dark textarea {
       color: var(--text) !important;
-      background: rgba(255,255,255,0.03) !important;
-      border: 1px solid rgba(255,255,255,0.12) !important;
+      background: rgba(255,255,255,0.02) !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
     }
 
+    /* Placeholders */
     body.dark input::placeholder,
     body.dark textarea::placeholder {
       color: rgba(230,238,248,0.45) !important;
+      opacity: 1 !important;
+    }
+    /* webkit placeholder */
+    body.dark input::-webkit-input-placeholder,
+    body.dark textarea::-webkit-input-placeholder {
+      color: rgba(230,238,248,0.45) !important;
     }
 
+    /* Caret */
     body.dark input,
     body.dark textarea {
       caret-color: var(--accent) !important;
     }
 
-    body.dark input:-webkit-autofill,
-    body.dark textarea:-webkit-autofill {
-      -webkit-text-fill-color: var(--text) !important;
-      box-shadow: 0 0 0px 1000px rgba(255,255,255,0.03) inset !important;
-    }
-
+    /* Focus style */
     body.dark input:focus,
     body.dark textarea:focus {
-      outline: 2px solid rgba(79,123,255,0.18) !important;
+      outline: 2px solid rgba(79,123,255,0.14) !important;
       outline-offset: 2px !important;
+      box-shadow: 0 6px 18px rgba(12,18,40,0.06) !important;
     }
 
-    body.dark button { color:#fff !important; }
-
-    body.dark label, body.dark .muted { color: var(--muted) !important; }
-
-    /* DARK MODE link colors override */
-    body.dark a, body.dark a:visited { color: var(--link-dark) !important; text-decoration: none; }
-    body.dark a:hover { color: var(--link-dark-hover) !important; text-decoration: underline; }
-
-    /* Image modal for marksheets */
-    .img-modal.hidden{display:none}
-    .img-modal{
-      position:fixed;inset:0;z-index:9999;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(0,0,0,0.75);padding:2rem;
+    /* Buttons (ensure text visible) */
+    body.dark button {
+      color: #fff !important;
+      border: none !important;
     }
-    .img-modal img{max-width:95%;max-height:85vh;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
-    .img-modal-close{
-      position:absolute;top:1.25rem;right:1.25rem;border:0;background:transparent;color:#fff;font-size:1.6rem;cursor:pointer;
+
+    /* Autofill fixes (Chrome / Blink) */
+    body.dark input:-webkit-autofill,
+    body.dark textarea:-webkit-autofill,
+    body.dark input:-webkit-autofill:focus,
+    body.dark textarea:-webkit-autofill:focus {
+      -webkit-text-fill-color: var(--text) !important;
+      transition: background-color 5000s ease-in-out 0s !important;
+      box-shadow: 0 0 0px 1000px rgba(255,255,255,0.02) inset !important;
     }
-    .img-download{
-      position:absolute;bottom:1.25rem;right:1.25rem;background:#fff;color:#002;border-radius:6px;padding:.5rem .75rem;text-decoration:none;
+
+    /* Firefox autofill (use background-clip trick) */
+    body.dark input:-moz-autofill,
+    body.dark textarea:-moz-autofill {
+      box-shadow: 0 0 0 1000px rgba(255,255,255,0.02) inset !important;
+      -moz-text-fill-color: var(--text) !important;
+    }
+
+    /* Additional specificity if some UA styles still override (very rarely) */
+    html body.dark input,
+    html body.dark textarea {
+      color: var(--text) !important;
+      -webkit-text-fill-color: var(--text) !important;
     }
 
     @media (max-width:720px){
       .hero{padding:0.5rem 0}
       .hero-image{order:2}
-      .hero-content h2{font-size:1.5rem}
     }
   </style>
 </head>
@@ -175,7 +153,6 @@
         <h1>Ankit Kumar</h1>
         <div class="muted" style="font-size:.9rem">Computer Science student</div>
       </div>
-
       <div style="display:flex;align-items:center;gap:.75rem">
         <nav class="nav" aria-label="Primary">
           <a href="#about">About</a>
@@ -190,12 +167,12 @@
       <section class="hero" id="about">
         <div class="hero-content">
           <h2>Hi — I'm Ankit</h2>
-          <p>I build web projects, take photos and learn finance. Welcome to my portfolio.</p>
+          <p class="muted">I build web projects, take photos and learn finance. Welcome to my portfolio. Here I will be adding all my achievements, projects and bits of my photography skills with some own composition of soothing beats.</p>
 
           <div class="socials" aria-label="Social links">
             <a href="https://www.instagram.com/ankitkrexperts/" target="_blank" rel="noopener">Instagram</a>
             <a href="https://www.linkedin.com/in/ankit-kumar-971163399/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://x.com/AnkitkrExperts" target="_blank" rel="noopener">X</a>
+            <a href="https://x.com/AnkitkrExperts" target="_blank" rel="noopener">X (Twitter)</a>
           </div>
         </div>
 
@@ -204,19 +181,33 @@
         </div>
       </section>
 
-      <section id="projects" class="cards" aria-label="Projects">
+      <section id="achievements" class="card" arira-label="Achievements">
         <article class="card">
-          <h3>Project 1</h3>
-          <p class="muted">Short description.</p>
-          <p><a class="achievement-link" href="10th.jpg" data-img="10th.jpg">10th Marksheet</a></p>
-          <p><a class="achievement-link" href="12th.jpg" data-img="12th.jpg">12th Marksheet</a></p>
+          <h3>Achievement 1</h3>
+          <p> <a href="assets/marks/10th.jpg" target="_blank" rel="noopener noreferrer">
+            10th Marksheet
+          </a>
+          </p>
         </article>
-
         <article class="card">
-          <h3>Project 2</h3>
-          <p class="muted">Short description.</p>
+          <h4>Achievement 2</h4>
+          <p> <a href="assets/marks/12th.jpg" target="_blank" rel="noopener noreferrer">
+            12th Marksheet
+          </a>
+          </p>
         </article>
       </section>
+      
+          <section id="projects" class="cards" aria-label="Projects">
+        <article class="card">
+          <h3>Project 1</h3>
+          <p class="muted">On the Way📍➡️.</p>
+        </article>
+        <article class="card">
+          <h3>Project 2</h3>
+          <p class="muted">Codes getting cooked👨‍🍳.</p>
+        </article>
+       </section>
 
       <section id="contact" class="contact" aria-label="Contact">
         <h2>Contact me</h2>
@@ -251,23 +242,9 @@
     </footer>
   </div>
 
-  <!-- Image modal for marksheets -->
-  <div id="imgModal" class="img-modal hidden" role="dialog" aria-hidden="true" aria-label="Marksheet preview">
-    <button id="imgModalClose" class="img-modal-close" aria-label="Close preview">✕</button>
-    <img id="imgModalImg" src="" alt="Marksheet preview">
-    <a id="imgModalDownload" href="#" download class="img-download">Download</a>
-  </div>
-
-  <!-- EmailJS Library -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
   <script>
-    // Basic UI interactions: year, theme toggle, marksheet modal, contact form with EmailJS
     (function(){
-      // footer year
       document.getElementById('year').textContent = new Date().getFullYear();
-
-      // theme toggle
       const themeToggle = document.getElementById('themeToggle');
       const saved = localStorage.getItem('theme');
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
@@ -283,93 +260,93 @@
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
       });
 
-      // marksheet modal
-      const modal = document.getElementById('imgModal');
-      const modalImg = document.getElementById('imgModalImg');
-      const closeBtn = document.getElementById('imgModalClose');
-      const downloadLink = document.getElementById('imgModalDownload');
-
-      document.querySelectorAll('.achievement-link').forEach(el => {
-        el.addEventListener('click', (e)=>{
-          e.preventDefault();
-          const img = el.dataset.img || el.getAttribute('href');
-          modalImg.src = img;
-          modalImg.alt = el.textContent.trim();
-          downloadLink.href = img;
-          modal.classList.remove('hidden');
-          modal.setAttribute('aria-hidden','false');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      function closeModal(){
-        modal.classList.add('hidden');
-        modal.setAttribute('aria-hidden','true');
-        modalImg.src = '';
-        document.body.style.overflow = '';
-      }
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e)=> { if (e.target === modal) closeModal(); });
-      document.addEventListener('keydown', (e)=> { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
-
-      // EmailJS Init & contact send
-      try {
-        emailjs.init("ldEcbD5dRTRAVbncp"); // your public key
-        console.log("EmailJS initialized");
-      } catch (e) {
-        console.warn("EmailJS init failed or library not loaded yet", e);
-      }
-
       const form = document.getElementById('contactForm');
       const sending = document.getElementById('sending');
       const success = document.getElementById('success');
       const sendBtn = document.getElementById('sendBtn');
+
+      sending.classList.add('hidden');
+      success.classList.add('hidden');
 
       form.addEventListener('submit', async function(e){
         e.preventDefault();
         success.classList.add('hidden');
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
-        const raw = document.getElementById('message').value.trim();
-
-        if (!name || !email || !raw) { alert('Please fill all fields.'); return; }
-
+        const message = document.getElementById('message').value.trim();
+        if (!name || !email || !message) { alert('Please fill all fields.'); return; }
         sendBtn.disabled = true;
         sending.classList.remove('hidden');
+        await new Promise(r => setTimeout(r, 900));
+        sending.classList.add('hidden');
+        success.classList.remove('hidden');
+        form.reset();
+        sendBtn.disabled = false;
+      });
+    })();
+    </script>
+    <!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
 
-        // Send as HTML & plain text to preserve emoji & formatting
-        const message_html = '<div style="font-family: Arial, Helvetica, sans-serif; font-size:16px; line-height:1.45; color:inherit;">' +
-          raw.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>') +
-          '</div>';
+    // Initialize EmailJS with your PUBLIC KEY
+    emailjs.init("ldEcbD5dRTRAVbncp");
 
-        const templateParams = {
-          from_name: name,
-          reply_to: email,
-          message: raw,
-          message_html: message_html,
-          to_email: "yourgmailaddress@gmail.com" // replace if your template uses fixed recipient or remove if not needed
-        };
+    const form = document.getElementById('contactForm');
+    const sending = document.getElementById('sending');
+    const success = document.getElementById('success');
+    const sendBtn = document.getElementById('sendBtn');
 
-        // debug log
-        console.log("EmailJS sending:", templateParams);
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-        emailjs.send("service_flikom9","template_otznp01",templateParams)
-          .then(function(response) {
-            console.log("EmailJS send SUCCESS", response);
-            sending.classList.add('hidden');
-            success.classList.remove('hidden');
-            form.reset();
-            sendBtn.disabled = false;
-          })
-          .catch(function(error) {
-            console.error("EmailJS send ERROR", error);
-            sending.classList.add('hidden');
-            sendBtn.disabled = false;
-            alert("Failed to send. Check console for details.");
-          });
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      sendBtn.disabled = true;
+      sending.classList.remove('hidden');
+      success.classList.add('hidden');
+
+      // EmailJS SEND FUNCTION
+      emailjs.send(
+        "service_flikom9",
+        "template_otznp01",
+        {
+          name: name,
+          email: email,
+          message: message
+        }
+      )
+      .then(() => {
+        sending.classList.add('hidden');
+        success.classList.remove('hidden');
+        form.reset();
+        sendBtn.disabled = false;
+      })
+      .catch((err) => {
+        sending.classList.add('hidden');
+        sendBtn.disabled = false;
+        alert("❌ Failed to send message.\n\n" + JSON.stringify(err));
       });
 
-    })();
-  </script>
+    });
+
+  })();
+</script>
+  
 </body>
 </html>
+
+
+
+
+
+
+
