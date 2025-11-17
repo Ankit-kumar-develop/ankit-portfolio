@@ -46,3 +46,26 @@ body.dark label,
 body.dark .muted {
   color: var(--muted);
 }
+/* LIGHT MODE: black links */
+a,
+a:visited {
+  color: #000 !important;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #333 !important;
+}
+
+/* DARK MODE: red links */
+body.dark a,
+body.dark a:visited {
+  color: #ff4d4d !important; /* red */
+  text-decoration: none;
+}
+
+body.dark a:hover {
+  color: #ff8080 !important; /* lighter red */
+}
+
+
