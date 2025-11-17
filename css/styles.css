@@ -67,5 +67,12 @@ body.dark a:visited {
 body.dark a:hover {
   color: #ff8080 !important; /* lighter red */
 }
+/* Fix project grid alignment */
+.projects-grid {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  width: 100%;
+}
+
 
 
